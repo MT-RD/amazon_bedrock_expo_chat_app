@@ -23,3 +23,15 @@ Before you get started, make sure you have the following installed:
 - [git](https://git-scm.com/) v2.14.1 or later
 - [Expo CLI](https://docs.expo.dev/more/expo-cli/)
 - [Expo Go](https://expo.dev/go) is a sandbox that enables you to quickly experiment with building native Android and iOS apps. It’s the fastest way to get started.
+
+### Issues
+
+The following packages should be updated for best compatibility with the installed expo version:
+
+`typescript@5.6.2 - expected version: ~5.3.3`
+
+Your project may not work correctly until you install the expected versions of the packages.
+
+Run the below command to update typescript to the expected version.
+
+<code>$ npm i typescript@~5.3.3</code>
