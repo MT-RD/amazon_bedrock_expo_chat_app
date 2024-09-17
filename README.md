@@ -1,10 +1,14 @@
 # Add Amazon Bedrock Chat Capabilities to a React Native App
 
-This repo demonstrate how to create a React Native chat application using Amazon Bedrock to build AI-powered chat features.
+The application uses Amazon Bedrock to generate AI-powered chat features and enhance user experiences.
+
+# Architecture Diagram
 
 Below illustrates the architecture and process flow for running a React Native mobile application backend in the AWS Cloud.
 
 ![Architecture and Process Flow](resources/amazon-bedrock-react-native-chat-app-1024x513.png)
+
+Flow of a mobile chat application using AWS services.
 
 1. Users access the application from their mobile devices.
 2. The mobile client React chat application interfaces with Amazon API Gateway.
