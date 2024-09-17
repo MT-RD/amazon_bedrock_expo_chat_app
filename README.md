@@ -35,3 +35,29 @@ Your project may not work correctly until you install the expected versions of t
 Run the below command to update typescript to the expected version.
 
 <code>$ npm i typescript@~5.3.3</code>
+
+### Create your application
+
+Run the below command to create an app (Uses [Expo](https://expo.dev)'s TypeScript template).
+
+<code>$ npx create-expo-app amazon_bedrock_expo_chat_app -t expo-template-blank-typescript</code>
+
+### Start your application
+
+Navigate to the root folder of your application and execute the following command to start the application.
+
+<code>
+cd amazon_bedrock_expo_chat_app
+
+npm run ios
+</code>
+
+When prompted, enter i to open the App in iOS simulator.
+
+`Press i │ open iOS simulator`
+
+Upon successful execution, you will see your new application running in the iOS Simulator, as shown below.
+
+![iPhone SE(3rd generation) - iOS 18.0](resources/ios-simulator-image-1.png)
+
+#
