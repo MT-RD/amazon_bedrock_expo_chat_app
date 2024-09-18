@@ -40,3 +40,6 @@ const myRestApi = new RestApi(apiStack, "RestApi", {
 const lambdaIntegration = new LambdaIntegration(
   backend.myApiFunction.resources.lambda
 );
+
+// Create a new resource path for chat interactions
+const chatPath = myRestApi.root.addResource("chat");
