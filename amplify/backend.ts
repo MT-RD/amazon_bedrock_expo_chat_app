@@ -35,3 +35,8 @@ const myRestApi = new RestApi(apiStack, "RestApi", {
     authorizationType: AuthorizationType.NONE, // API is open to unauthenticated access. Consider implementing authentication and authorization if required.
   },
 });
+
+// Create a new Lambda integration
+const lambdaIntegration = new LambdaIntegration(
+  backend.myApiFunction.resources.lambda
+);
