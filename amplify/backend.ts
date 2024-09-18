@@ -64,3 +64,7 @@ const apiRestPolicy = new Policy(apiStack, "RestApiPolicy", {
     }),
   ],
 });
+
+// Attach the policy to the Lambda function's role directly
+const lambaExecutionRole = backend.myApiFunction.resources.lambda.role!;
+lambaExecutionRole.attachInlinePolicy(apiRestPolicy);
