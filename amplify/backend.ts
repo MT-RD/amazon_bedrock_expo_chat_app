@@ -48,3 +48,19 @@ const chatPath = myRestApi.root.addResource("chat");
 chatPath.addMethod("POST", lambdaIntegration, {
   authorizationType: AuthorizationType.NONE, // The POST method is open to unauthenticated accesss. Implement authentication if needed.
 });
+
+// Create a new IAM policy to allow Invoke access to the API and Bedrock model
+const apiRestPolicy = new Policy(apiStack, "RestApiPolicy", {
+  statements: [
+    new PolicyStatement({
+      actions: ["execute-api:Invoke"],
+      resources: [`${myRestApi.arnForExecuteApi("*", "/chat", "dev")}`],
+    }),
+    new PolicyStatement({
+      actions: ["bedrock:InvokeModel"],
+      resources: [
+        "arn:aws:bedrock:us-east-1::foundation-model/ai21.j2-ultra-v1",
+      ],
+    }),
+  ],
+});
