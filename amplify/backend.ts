@@ -18,4 +18,20 @@ const backend = defineBackend({
 const apiStack = backend.createStack("api-stack");
 
 // Create a new REST API
-const myRestApi = new RestApi(apiStack, "RestApi", {});
+const myRestApi = new RestApi(apiStack, "RestApi", {
+  restApiName: "myRestApi",
+  deploy: true,
+  deployOptions: {
+    stageName: "dev",
+    loggingLevel: MethodLoggingLevel.INFO, // Enable logging for debugging
+  },
+  // CORS configuration
+  defaultCorsPreflightOptions: {
+    allowOrigins: Cors.ALL_ORIGINS, // Allow all origins. Restrict this to domains you trust in production.
+    allowMethods: Cors.ALL_METHODS, // Allow all HTTP methods. Restrict this to the methods you need in production.
+    allowHeaders: Cors.DEFAULT_HEADERS, // Allow all headers. Specify only the headers you need in production.
+  },
+  defaultMethodOptions: {
+    authorizationType: AuthorizationType.NONE, // API is open to unauthenticated access. Consider implementing authentication and authorization if required.
+  },
+});
