@@ -43,3 +43,8 @@ const lambdaIntegration = new LambdaIntegration(
 
 // Create a new resource path for chat interactions
 const chatPath = myRestApi.root.addResource("chat");
+
+// Add POST method to the chat resource path
+chatPath.addMethod("POST", lambdaIntegration, {
+  authorizationType: AuthorizationType.NONE, // The POST method is open to unauthenticated accesss. Implement authentication if needed.
+});
