@@ -68,3 +68,16 @@ const apiRestPolicy = new Policy(apiStack, "RestApiPolicy", {
 // Attach the policy to the Lambda function's role directly
 const lambaExecutionRole = backend.myApiFunction.resources.lambda.role!;
 lambaExecutionRole.attachInlinePolicy(apiRestPolicy);
+
+// Add outputs to the configuration file
+backend.addOutput({
+  custom: {
+    API: {
+      [myRestApi.restApiName]: {
+        endpoint: myRestApi.url,
+        region: Stack.of(myRestApi).region,
+        apiName: myRestApi.restApiName,
+      },
+    },
+  },
+});
